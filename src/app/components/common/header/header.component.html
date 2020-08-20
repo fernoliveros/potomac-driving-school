@@ -1,31 +1,40 @@
 <nav id="navbar-1" class="navbar navbar-expand-lg btco-hover-menu navbar-1">
-  <div class="container"> <a class="navbar-brand" routerLink="/"><img class="logo" id="logo"
-        src="assets/images/pds_logo.png" alt="logo"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"> <span
-        class="navbar-toggler-icon"></span> </button>
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">
+      <!-- <img class="logo" id="logo" src="assets/images/pds_logo_2.png" alt="logo"> -->
+      <div class="pds-name">Potomac Driving School</div>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false"> Home </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" routerLink="/home1">Home 1</a></li>
-            <li><a class="dropdown-item" routerLink="/home2">Home 2</a></li>
-          </ul>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#"> Home </a>
         </li>
-        <li class="nav-item"> <a class="nav-link" routerLink="/about"> About </a> </li>
-        <li class="nav-item"> <a class="nav-link" routerLink="/services"> Services </a> </li>
-        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false"> Blog </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" routerLink="/bloglist">Blog Listing</a></li>
-            <li><a class="dropdown-item" routerLink="/blogdetails">Blog Details</a></li>
-          </ul>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about"> About </a>
         </li>
-        <li class="nav-item"> <a class="nav-link" routerLink="/contact"> Contact </a> </li>
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item"> <a class="btn btn-default" routerLink="/contact"> Get a free quote </a> </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/services"> Teen Instruction </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/services"> Adult Instruction </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#"> Register </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact"> Contact </a>
+        </li>
       </ul>
     </div>
   </div>
