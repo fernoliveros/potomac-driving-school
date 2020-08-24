@@ -8,10 +8,12 @@ import { FooterComponent } from './components/common/footer/footer.component';
 import { Home1Component } from './components/pages/home1/home1.component';
 import { Home2Component } from './components/pages/home2/home2.component';
 import { AboutComponent } from './components/pages/about/about.component';
-import { ServicesComponent } from './components/pages/services/services.component';
+import { TeensComponent } from './components/pages/services/teens.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { BloglistComponent } from './components/pages/bloglist/bloglist.component';
 import { BlogdetailsComponent } from './components/pages/blogdetails/blogdetails.component';
+import { AdultsComponent } from './components/pages/adults/adults.component';
+import { RegistrationComponent } from './components/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -21,16 +23,15 @@ import { BlogdetailsComponent } from './components/pages/blogdetails/blogdetails
     Home1Component,
     Home2Component,
     AboutComponent,
-    ServicesComponent,
+    TeensComponent,
     ContactComponent,
     BloglistComponent,
-    BlogdetailsComponent
+    BlogdetailsComponent,
+    AdultsComponent,
+    RegistrationComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
