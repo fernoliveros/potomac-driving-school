@@ -10,3 +10,28 @@ h4 {
 .margin-bottom-15 {
   margin-bottom: 15px;
 }
+
+.bold-black {
+  font-weight: bold;
+  color: black;
+}
+
+.fixed-height {
+  height: 282px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+.margin-auto-top {
+  margin-top: auto;
+}
+
+.post .bottom { 
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom .register {
+  color: #ea5539;
+}

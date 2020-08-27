@@ -13,7 +13,7 @@ import { ContactComponent } from './components/pages/contact/contact.component';
 import { BloglistComponent } from './components/pages/bloglist/bloglist.component';
 import { BlogdetailsComponent } from './components/pages/blogdetails/blogdetails.component';
 import { AdultsComponent } from './components/pages/adults/adults.component';
-import { RegistrationComponent } from './components/registration/registration.component';
+import { RegisterComponent } from './components/pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { RegistrationComponent } from './components/registration/registration.co
     BloglistComponent,
     BlogdetailsComponent,
     AdultsComponent,
-    RegistrationComponent,
+    RegisterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

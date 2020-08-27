@@ -9,7 +9,7 @@ import { ContactComponent } from './components/pages/contact/contact.component';
 import { BloglistComponent } from './components/pages/bloglist/bloglist.component';
 import { BlogdetailsComponent } from './components/pages/blogdetails/blogdetails.component';
 import { AdultsComponent } from './components/pages/adults/adults.component';
-import { RegistrationComponent } from './components/registration/registration.component';
+import { RegisterComponent } from './components/pages/register/register.component';
 
 const routes: Routes = [
   { path: '', component: Home1Component },
@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'adults', component: AdultsComponent },
   { path: 'bloglist', component: BloglistComponent },
   { path: 'blogdetails', component: BlogdetailsComponent },
-  { path: 'register', component: RegistrationComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'contact', component: ContactComponent },
 ];
 
