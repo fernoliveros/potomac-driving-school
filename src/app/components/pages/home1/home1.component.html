@@ -22,79 +22,31 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-4 col-md-6">
-        <div class="post">
-          <img
-            class="img-fluid"
-            src="assets/images/post-1.jpg"
-            alt="First item"
-          />
-          <div class="textcont fixed-height">
-            <h3><a href="#">Behind The Wheel</a></h3>
-            <div class="post-text">
-              <p>
-                This class includes 7 sessions at the end of which you will take a driving exam to obtain your licence. You require a driving learner's 
-                permit and to have completed the Driver's Education course, or be enrolled in it with our school.
-              </p>
-            </div>
-            <div class="bottom">
-              <a class="readmore" href="#"
-                >Read More <i class="icofont-long-arrow-right"></i
-              ></a>
-              <a class="register" href="#"
-                >Register</a>
-            </div>
-          </div>
-        </div>
+        <app-post
+          [imgPath]="'assets/images/post-1.jpg'"
+          [title]="'Behind The Wheel'"
+          [description]="BtwDescription"
+          (register)="onRegister('register BTW')"
+          (readMore)="onReadMore('readMore BTW')"
+        ></app-post>
       </div>
       <div class="col-lg-4 col-md-6">
-        <div class="post">
-          <img
-            class="img-fluid"
-            src="assets/images/post-2.jpg"
-            alt="First item"
-          />
-          <div class="textcont fixed-height">
-            <h3><a href="#">Driver's Education</a></h3>
-            <div class="post-text">
-              <p>
-                This class is a 30 hour course where you will learn about the rules of the road as well as the risks involved with driving. 
-                This class is required to obtain your license and can be taken online or in person.
-              </p>
-            </div>
-            <div class="bottom">
-              <a class="readmore" href="#"
-                >Read More <i class="icofont-long-arrow-right"></i
-              ></a>
-              <a class="register" href="#"
-                >Register</a>
-            </div>
-          </div>
-        </div>
+        <app-post
+          [imgPath]="'assets/images/post-2.jpg'"
+          [title]="'Driver\'s Education'"
+          [description]="DriversEdDescription"
+          (register)="onRegister('register DE')"
+          (readMore)="onReadMore('readMore DE')"
+        ></app-post>
       </div>
       <div class="col-lg-4 col-md-6">
-        <div class="post">
-          <img
-            class="img-fluid"
-            src="assets/images/post-3.jpg"
-            alt="First item"
-          />
-          <div class="textcont fixed-height">
-            <h3><a href="#">Driving Improvement Clinic</a></h3>
-            <div class="post-text">
-              <p>
-                This is an 8 hour course that is for drivers that need to gain points back on their driving record,
-                and for drivers that are mandated to take it by either a court or the DMV.
-              </p>
-            </div>
-            <div class="bottom">
-              <a class="readmore" href="#"
-                >Read More <i class="icofont-long-arrow-right"></i
-              ></a>
-              <a class="register" href="#"
-                >Register</a>
-            </div>
-          </div>
-        </div>
+        <app-post
+          [imgPath]="'assets/images/post-3.jpg'"
+          [title]="'Driving Improvement Clinic'"
+          [description]="DriversEdDescription"
+          (register)="onRegister('register DIC')"
+          (readMore)="onReadMore('readMore DIC')"
+        ></app-post>
       </div>
     </div>
     <!-- <div class="row">

@@ -1,0 +1,19 @@
+.post .bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom .register {
+  color: #ea5539;
+}
+
+.link :hover {
+  cursor: pointer;
+}
+
+.fixed-height {
+  height: 282px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}

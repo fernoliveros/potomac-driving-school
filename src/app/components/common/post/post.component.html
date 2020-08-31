@@ -1,0 +1,21 @@
+<div class="post">
+  <img class="img-fluid" [src]="imgPath" alt="First item" />
+  <div class="textcont fixed-height">
+    <div>
+      <h3>
+        <a href="#">{{ title }}</a>
+      </h3>
+      <div class="post-text">
+        <p>
+          {{ description }}
+        </p>
+      </div>
+    </div>
+    <div class="bottom">
+      <a class="readmore" href="" (click)="onReadMore()"
+        >Read More <i class="icofont-long-arrow-right"></i
+      ></a>
+      <a class="register" href="" (click)="onRegister()">Register</a>
+    </div>
+  </div>
+</div>
