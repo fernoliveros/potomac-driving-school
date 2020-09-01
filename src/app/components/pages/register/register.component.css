@@ -1,0 +1,27 @@
+.some-padding {
+  padding: 50px 0;
+}
+
+#selectClass {
+  height: 50px;
+  padding: 10px;
+}
+
+.sexRadio {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  justify-content: space-between;
+  width: 180px;
+}
+
+.sexRadio label {
+  margin: 0;
+}
+.sexRadio input {
+  margin-right: 3px;
+}
+
+.align-bottom {
+  align-items: flex-end;
+}
