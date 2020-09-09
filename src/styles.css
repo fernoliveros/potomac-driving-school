@@ -96,7 +96,7 @@ p{font-size:14px; line-height:24px;}
 .inner-header p{font-size:16px; color:#fff;}
 .inner-header p a{color:#ea5539;}
 .inner-header p a:hover{text-decoration:underline;}
-.inner-header-text{margin:15px 0; padding:100px 0 50px;}
+.inner-header-text{margin:15px 0; padding:75px 0 15px;}
 
 /*2.4. Navbar*/
 .navbar-1 .navbar-toggler-icon, .fixed-top .navbar-toggler-icon{background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");}
@@ -226,7 +226,7 @@ ul.navbar-nav{margin-top:10px;}
 /*           5.Footer
 /*--------------------------------*/
 footer{background:#172842;}
-.footer-top{ padding:70px 0; overflow:hidden;}
+.footer-top{padding-bottom: 15px; overflow:hidden;}
 .footer-top .item{ margin:30px 0 15px;}
 .footer-top .item img{margin:0 0 30px 0;}
 .footer-top .item p{color:#8f9bb5; margin-bottom:5px; }
