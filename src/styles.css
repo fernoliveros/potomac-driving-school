@@ -129,7 +129,6 @@ ul.navbar-nav{margin-top:10px;}
 .services-1 .item{text-align: center; border: 1px solid #d2cfcf; padding: 30px 16px; margin: 15px 0; box-shadow: 0px 17px 35px rgba(74, 74, 115, 0.1), 0px 5px 15px rgba(0, 0, 0, 0.07);}
 .services-1 .item i{color:#07355a; font-size:45px; margin: 0 0 15px 0; display: inline-block;}
 .services-1 .item h4{font-size:18px; font-weight:400;}
-.services-1 .item p{color:#777;}
 .services-1 .item:hover i{color:#ea5539;}
 
 /*3.2. Services 2*/

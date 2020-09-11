@@ -15,6 +15,7 @@ import { BlogdetailsComponent } from './components/pages/blogdetails/blogdetails
 import { AdultsComponent } from './components/pages/adults/adults.component';
 import { RegisterComponent } from './components/pages/register/register.component';
 import { PostComponent } from './components/common/post/post.component';
+import { CardComponent } from './components/common/card/card.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { PostComponent } from './components/common/post/post.component';
     AdultsComponent,
     RegisterComponent,
     PostComponent,
+    CardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

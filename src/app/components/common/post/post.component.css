@@ -12,7 +12,6 @@
 }
 
 .fixed-height {
-  height: 282px;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
