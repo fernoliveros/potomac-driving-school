@@ -14,171 +14,137 @@
 <section class="section-padding services-1 first-section">
   <div class="container">
     <div class="row">
-      <div class="col-lg-12 col-md-12">
-        <div class="item">
-          <div class="flex">
-            <img
-              class="wheel-icon"
-              src="../../../../assets/icons/car-steering-wheel.svg"
-              height="45"
-              width="45"
-            />
-            <h3>Behind The Wheel</h3>
-          </div>
-          <p>
-            Teenagers (younger than 18) are required to take Behind The Wheel in
-            order to obtain their license. This course consists of 7 sessions in
-            the car in which the student will be driving and observing. At the
-            end of the course the student will then take the a road skills test.
-            Upon completion the student will receive a provisional driver's
-            license.
-          </p>
-          <p>
-            The provisional driver's license along with the Learner’s Permit
-            will be the license for the new driver and the student will be
-            exempt from the road skills test at the DMV. Within the next few
-            months the juvenile court will send a letter with the date and time
-            of the Licensing Ceremony. At the Ceremony the student will receive
-            the hard copy of the license.
-          </p>
-          <div class="flex-left">
-            <ul class="list">
-              <span>Requirements:</span>
-              <li>Driving Learner's Permit</li>
-              <li>
-                Driver's Education Certificate. This can obtained from school's
-                office. You can also take the course with us here.
-              </li>
-            </ul>
-          </div>
+      <app-card
+        (register)="onRegister('btwt')"
+        title="Behind The Wheel"
+        iconPath="../../../../assets/icons/car-steering-wheel.svg"
+      >
+        <p>
+          Teenagers (younger than 18) are required to take Behind The Wheel in
+          order to obtain their license. This course consists of 7 sessions in
+          the car in which the student will be driving and observing. At the end
+          of the course the student will then take the a road skills test. Upon
+          completion the student will receive a provisional driver's license.
+        </p>
+        <p>
+          The provisional driver's license along with the Learner’s Permit will
+          be the license for the new driver and the student will be exempt from
+          the road skills test at the DMV. Within the next few months the
+          juvenile court will send a letter with the date and time of the
+          Licensing Ceremony. At the Ceremony the student will receive the hard
+          copy of the license.
+        </p>
+        <div class="flex-left">
+          <ul class="list">
+            <span>Requirements:</span>
+            <li>Driving Learner's Permit</li>
+            <li>
+              Driver's Education Certificate. This can obtained from school's
+              office. You can also take the course with us here.
+            </li>
+          </ul>
         </div>
-      </div>
-      <div class="col-lg-12 col-md-12">
-        <div class="item">
-          <div class="flex">
-            <img
-              class="wheel-icon"
-              src="../../../../assets/icons/school-24px.svg"
-              height="45"
-              width="45"
-            />
-            <h3>Driver's Education</h3>
-          </div>
-          <p>
-            This is an online class with the partnership of National Driver
-            Training directed to students who have not taken the Driver
-            Education Class in high school such as home schooled students or
-            students moving from another country or state.
-          </p>
-          <p>
-            The program consists of at least 30 hours of instruction and
-            includes components about alcohol safety, drug abuse awareness,
-            aggressive driving, distracted driving, pedestrian and bicycle
-            safety, handicapped parking, fuel efficient driving practices,
-            motorcycle awareness and organ and tissue donation awareness as
-            required by law.
-          </p>
-          <p>
-            You must be at least 15 years and 6 months old to take the online
-            driver education course. All individuals who elect to take the
-            classroom component of the driver education course online must take
-            the online course through a DMV licensed driver training school.
-            Homeschooled students are exempt from this requirement. In order to
-            benefit from this course, you must be able to work independently and
-            be comfortable with using a computer.
-          </p>
-          <div class="flex-left">
-            <ol class="list">
-              <span>Instructions for Driver Education Online Class:</span>
-              <li>Register Online</li>
-              <li>Process Payment</li>
-              <li>
-                Student will receive an email with the link, username and
-                password to login and start the class
-              </li>
-              <li>
-                After you finish the class you can now schedule the final test
-                via email or by calling our office
-              </li>
-            </ol>
-          </div>
-          <span
-            >For more information
-            <a routerLink="/contact" class="highlight">contact us</a></span
-          >
+      </app-card>
+      <app-card
+        (register)="onRegister('deo')"
+        title="Driver's Education"
+        iconPath="../../../../assets/icons/school-24px.svg"
+      >
+        <p>
+          This is an online class with the partnership of National Driver
+          Training directed to students who have not taken the Driver Education
+          Class in high school such as home schooled students or students moving
+          from another country or state.
+        </p>
+        <p>
+          The program consists of at least 30 hours of instruction and includes
+          components about alcohol safety, drug abuse awareness, aggressive
+          driving, distracted driving, pedestrian and bicycle safety,
+          handicapped parking, fuel efficient driving practices, motorcycle
+          awareness and organ and tissue donation awareness as required by law.
+        </p>
+        <p>
+          You must be at least 15 years and 6 months old to take the online
+          driver education course. All individuals who elect to take the
+          classroom component of the driver education course online must take
+          the online course through a DMV licensed driver training school.
+          Homeschooled students are exempt from this requirement. In order to
+          benefit from this course, you must be able to work independently and
+          be comfortable with using a computer.
+        </p>
+        <div class="flex-left">
+          <ol class="list">
+            <span>Instructions for Driver Education Online Class:</span>
+            <li>Register Online</li>
+            <li>Process Payment</li>
+            <li>
+              Student will receive an email with the link, username and password
+              to login and start the class
+            </li>
+            <li>
+              After you finish the class you can now schedule the final test via
+              email or by calling our office
+            </li>
+          </ol>
         </div>
-      </div>
-      <div class="col-lg-12 col-md-12">
-        <div class="item">
-          <div class="flex">
-            <h3>Parent Teen Presentation – Planning District 8</h3>
-          </div>
-          <p>
-            Student and Parent in Planning District 8 (Counties of Arlington,
-            Fairfax, Loudoun, and Prince William and cities of Alexandria,
-            Fairfax, Manassas and Manassas Park) must attend an additional
-            minimum 90-minute parent/student driver education component as part
-            of the in-classroom portion of the driver education curriculum
-            emphasizing parental responsibilities regarding juvenile driver
-            behavior, juvenile driving restrictions pursuant to Virginia Code
-            and the dangers of driving while intoxicated and underage
-            consumption of alcohol as required by the DMV
-          </p>
-        </div>
-      </div>
-      <div class="col-lg-12 col-md-12">
-        <div class="item">
-          <div class="flex">
-            <h3>Re-Examination (Failed 3 times DMV Learner’s Permit Test)</h3>
-          </div>
-          <p>
-            If you are 18 and under the DMV requires 8 hour Driver’s Manual
-            Course if you present proof that you have completed the 36 fifty
-            minute periods of the Driver Education classroom component or 36
-            fifty-minute periods of the Driver Education if you have not
-            previously taken the classroom component.
-          </p>
-        </div>
-      </div>
-      <div class="col-lg-12 col-md-12">
-        <div class="item">
-          <div class="flex">
-            <h3>Private Driving 1 on 1 Lessons</h3>
-          </div>
-          <p>
-            These driving lessons are designed for people of all ages that need
-            to learn how to drive regardless of your level of driving skill. Our
-            Virginia certified instructors will help develop the skills to
-            become a responsible driver.
-          </p>
-        </div>
-      </div>
-      <div class="col-lg-12 col-md-12">
-        <div class="item">
-          <div class="flex">
-            <h3>Package Deal</h3>
-          </div>
-          <p>
-            These deal is targeted at students that would like to take private
-            driving lessons as well as Behind The Wheel. Typically this is for
-            students that have very poor to no driving skills that would also
-            like to obtain their driver's licence.
-          </p>
-        </div>
-      </div>
-      <div class="col-lg-12 col-md-12">
-        <div class="item">
-          <div class="flex">
-            <h3>Driving Improvement Clinic</h3>
-          </div>
-          <p>
-            This is offered to drivers 21 and younger who have received a
-            driving ticket and need to attend in person to the Clinic as
-            required by DMV. It is also offered to gain +5 points in your
-            driving record.
-          </p>
-        </div>
-      </div>
+      </app-card>
+      <app-card
+        (register)="onRegister('')"
+        title="Parent Teen Presentation – Planning District 8"
+      >
+        <p>
+          Student and Parent in Planning District 8 (Counties of Arlington,
+          Fairfax, Loudoun, and Prince William and cities of Alexandria,
+          Fairfax, Manassas and Manassas Park) must attend an additional minimum
+          90-minute parent/student driver education component as part of the
+          in-classroom portion of the driver education curriculum emphasizing
+          parental responsibilities regarding juvenile driver behavior, juvenile
+          driving restrictions pursuant to Virginia Code and the dangers of
+          driving while intoxicated and underage consumption of alcohol as
+          required by the DMV.
+        </p>
+      </app-card>
+      <app-card
+        (register)="onRegister('re')"
+        title="Re-Examination (Failed 3 times DMV Learner’s Permit Test)"
+      >
+        <p>
+          If you are 18 and under the DMV requires 8 hour Driver’s Manual Course
+          if you present proof that you have completed the 36 fifty minute
+          periods of the Driver Education classroom component or 36 fifty-minute
+          periods of the Driver Education if you have not previously taken the
+          classroom component.
+        </p>
+      </app-card>
+      <app-card
+        (register)="onRegister('pdl')"
+        title="Private Driving 1 on 1 Lessons"
+      >
+        <p>
+          These driving lessons are designed for people of all ages that need to
+          learn how to drive regardless of your level of driving skill. Our
+          Virginia certified instructors will help develop the skills to become
+          a responsible driver.
+        </p>
+      </app-card>
+      <app-card (register)="onRegister('spt')" title="Package Deal">
+        <p>
+          These deal is targeted at students that would like to take private
+          driving lessons as well as Behind The Wheel. Typically this is for
+          students that have very poor to no driving skills that would also like
+          to obtain their driver's licence.
+        </p>
+      </app-card>
+      <app-card
+        (register)="onRegister('dic')"
+        title="Driving Improvement Clinic"
+      >
+        <p>
+          This is offered to drivers 21 and younger who have received a driving
+          ticket and need to attend in person to the Clinic as required by DMV.
+          It is also offered to gain +5 points in your driving record.
+        </p>
+      </app-card>
     </div>
   </div>
 </section>

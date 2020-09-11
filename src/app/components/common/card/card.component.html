@@ -1,1 +1,12 @@
-<p>card works!</p>
+<div class="col-lg-12 col-md-12">
+  <div class="item">
+    <div class="flex">
+      <img class="icon" [src]="iconPath" height="45" width="45" />
+      <h3>{{ title }}</h3>
+    </div>
+    <ng-content></ng-content>
+    <div class="bottom">
+      <div class="register" (click)="onRegister()">Register</div>
+    </div>
+  </div>
+</div>
