@@ -1,0 +1,37 @@
+.wheel-icon {
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-left {
+  display: flex;
+  text-align: left;
+  font-size: 14px;
+}
+
+.list {
+  padding-left: 20px;
+}
+
+p {
+  text-align: left;
+  text-indent: 30px;
+}
+
+.first-section {
+  padding-top: 30px;
+}
+
+.highlight {
+  color: #ea5539;
+}
+
+app-card {
+  width: 100%;
+}
