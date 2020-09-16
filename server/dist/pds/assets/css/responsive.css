@@ -1,0 +1,78 @@
+/* Medium Layout: 1280px. */
+@media only screen and (min-width: 992px) and (max-width: 1200px) { 
+  
+    
+}
+/* Tablet Layout: 768px. */
+@media only screen and (min-width: 768px) and (max-width: 991px) { 
+.navbar-1{padding: .5rem 1rem; background:#fff;}
+.navbar-1 ul li a.nav-link {margin: 0; color:#505050;}
+.navbar-1 ul li a.nav-link:hover {margin: 0; color:#008cfe;}
+.fixed-top{padding: .5rem 1rem;}
+.fixed-top ul li a.nav-link {margin: 0;}
+.header-1-text {padding: 150px 0 0; margin: -45px 0 0 0;}
+.header-1-text h5 {font-size: 18px; font-weight: 300; color: #ea5539;}
+.header-1-text h2 {font-size: 30px; font-weight: 600; color: #fff;}
+.header-1-text p {font-size: 14px; color: #fff;}
+.services-4 {background: #07355a;}
+.header-2 {background:#07355a;}
+.banner-2-text{margin: 15px 0; padding: 100px 0 0;}
+.header-2 h2 {color: #fff; font-size: 30px;}
+.header-2 p {font-size: 14px; color: #fff;}
+.inner-header h2 {color: #fff; font-size: 30px;}   
+}
+/* Mobile Layout: 320px. */
+@media only screen and (max-width: 767px) { 
+.navbar-1{padding: .5rem 1rem; background:#fff;}
+.navbar-1 ul li a.nav-link {margin: 0; color:#505050;}
+.navbar-1 ul li a.nav-link:hover {margin: 0; color:#008cfe;}
+.fixed-top{padding: .5rem 1rem;}
+.fixed-top ul li a.nav-link {margin: 0;}
+.header-1-text {padding: 150px 0 0;}
+.header-1-text h5 {font-size: 18px; font-weight: 300; color: #ea5539;}
+.header-1-text h2 {font-size: 30px; font-weight: 600; color: #fff;}
+.header-1-text p {font-size: 14px; color: #fff;}
+.services-4 {background: #07355a;}
+.header-2 {background:#07355a;}
+.banner-2-text{margin: 15px 0; padding: 100px 0 0;}
+.header-2 h2 {color: #fff; font-size: 30px;}
+.header-2 p {font-size: 14px; color: #fff;}
+.inner-header h2 {color: #fff; font-size: 30px;}
+}
+/* Wide Mobile Layout: 480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) { 
+.navbar-1{padding: .5rem 1rem; background:#fff;}
+.navbar-1 ul li a.nav-link {margin: 0; color:#505050;}
+.navbar-1 ul li a.nav-link:hover {margin: 0; color:#008cfe;}
+.fixed-top{padding: .5rem 1rem;}
+.fixed-top ul li a.nav-link {margin: 0;}
+.header-1-text {padding: 150px 0 0;}
+.header-1-text h5 {font-size: 18px; font-weight: 300; color: #ea5539;}
+.header-1-text h2 {font-size: 30px; font-weight: 600; color: #fff;}
+.header-1-text p {font-size: 14px; color: #fff;}
+.services-4 {background: #07355a;}
+.header-2 {background:#07355a;}
+.banner-2-text{margin: 15px 0; padding: 100px 0 0;}
+.header-2 h2 {color: #fff; font-size: 30px;}
+.header-2 p {font-size: 14px; color: #fff;}
+.inner-header h2 {color: #fff; font-size: 30px;}
+}
+
+/* Small Mobile Layout: 479px. */
+@media only screen and (max-width: 479px) { 
+.navbar-1{padding: .5rem 1rem; background:#fff;}
+.navbar-1 ul li a.nav-link {margin: 0; color:#505050;}
+.navbar-1 ul li a.nav-link:hover {margin: 0; color:#008cfe;}
+.fixed-top{padding: .5rem 1rem;}
+.fixed-top ul li a.nav-link {margin: 0;}
+.header-1-text {padding: 150px 0 0;}
+.header-1-text h5 {font-size: 18px; font-weight: 300; color: #ea5539;}
+.header-1-text h2 {font-size: 30px; font-weight: 600; color: #fff;}
+.header-1-text p {font-size: 14px; color: #fff;}
+.services-4 {background: #07355a;}
+.header-2 {background:#07355a;}
+.banner-2-text{margin: 15px 0; padding: 100px 0 0;}
+.header-2 h2 {color: #fff; font-size: 30px;}
+.header-2 p {font-size: 14px; color: #fff;}
+.inner-header h2 {color: #fff; font-size: 30px;}
+}
