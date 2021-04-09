@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
     // var kDate = crypto.HmacSHA256(new Date(), "AWS4" + environment.pdsUserKey);
     // var kRegion = crypto.HmacSHA256('us-east-1', kDate);
     // var kService = crypto.HmacSHA256('execute-api', kRegion);
-    // var kSigning = crypto.HmacSHA256("aws4_request", kService);
+    // var kSigning = crypto.HmacSHA256("aws4_request", kService); yep
     const headers = new HttpHeaders({
         'AcessKey': environment.pdsUserKey,
         'SecretKey': environment.pdsUserSecret
