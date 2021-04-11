@@ -4,6 +4,7 @@ import { FormControl } from '@angular/forms';
 import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 // import * as crypto from "crypto-js"
 import { environment } from '../../../../environments/environment';
+import { AwsClient } from 'aws4fetch'
 
 @Component({
   selector: 'app-register',
@@ -25,17 +26,24 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  public submitRegistration(): void {
-    const url= `https://qgsw8guhb1.execute-api.us-east-1.amazonaws.com/default/helloWorldLambda`
-    
-    // var kDate = crypto.HmacSHA256(new Date(), "AWS4" + environment.pdsUserKey);
-    // var kRegion = crypto.HmacSHA256('us-east-1', kDate);
-    // var kService = crypto.HmacSHA256('execute-api', kRegion);
-    // var kSigning = crypto.HmacSHA256("aws4_request", kService); yep
-    const headers = new HttpHeaders({
-        'AcessKey': environment.pdsUserKey,
-        'SecretKey': environment.pdsUserSecret
-      })
-     this.http.get(url, {headers}).subscribe(res => console.log(res), err => console.log(err));
+  public submitRegistration() {
+    const url= `https://qgsw8guhb1.execute-api.us-east-1.amazonaws.com/default/pdsemaillambda`
+    const service= 'execute-api'
+    const region = 'us-east-1'
+
+    const aws = new AwsClient({
+      accessKeyId: environment.pdsUserKey,
+      secretAccessKey: environment.pdsUserSecret,
+      service,
+      region
+    })
+
+    aws.fetch(url, {
+      method: 'GET',
+      headers: {
+        "x-api-key": environment.apiKey
+      }
+    }).then(response => response.json())
+    .then(data => console.log(data));
   }
 }

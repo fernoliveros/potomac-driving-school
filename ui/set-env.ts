@@ -5,6 +5,7 @@ require('dotenv').config();// `environment.ts` file structure
 const envConfigFile = `export const environment = {
     pdsUserKey: '${process.env.PDS_USER_KEY}',
     pdsUserSecret: '${process.env.PDS_USER_SECRET}',
+    apiKey: '${process.env.API_KEY}',
     production: ${process.env.PRODUCTION}
 };
 `;
