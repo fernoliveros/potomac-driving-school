@@ -63,7 +63,7 @@
                   type="text"
                   class="form-control"
                   name="mname"
-                  placeholder="Middle Name *"
+                  placeholder="Middle Name"
                 />
               </div>
             </div>
@@ -178,7 +178,7 @@
               </div>
             </div>
             <div class="col-md-12">
-              <button type="submit" (click)="submitRegistration()" class="btn btn-secondary btn-lg wow tada">
+              <button type="submit" (click)="submitRegistration()" [disabled]="!registrationForm.valid" class="btn btn-secondary btn-lg wow tada">
                 Submit
               </button>
             </div>
