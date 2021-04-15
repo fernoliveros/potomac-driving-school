@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiGatewayService } from 'src/app/service/api.gateway.service';
 import * as moment from "moment";
-import { ConsoleReporter } from 'jasmine';
 
 @Component({
   selector: 'app-register',
