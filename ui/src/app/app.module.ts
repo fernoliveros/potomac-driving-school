@@ -18,6 +18,12 @@ import { AdultsComponent } from './components/pages/adults/adults.component';
 import { RegisterComponent } from './components/pages/register/register.component';
 import { PostComponent } from './components/common/post/post.component';
 import { CardComponent } from './components/common/card/card.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule} from '@angular/material/radio';
+import { MatDatepickerModule } from '@angular/material/datepicker'; 
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -36,7 +42,19 @@ import { CardComponent } from './components/common/card/card.component';
     PostComponent,
     CardComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

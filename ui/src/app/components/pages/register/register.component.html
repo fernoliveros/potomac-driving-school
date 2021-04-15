@@ -18,163 +18,230 @@
           method="post"
           name="ContactForm"
           id="ContactForm"
+          [formGroup]="registrationForm"
         >
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <select
-                  [formControl]="classSelect"
-                  class="form-control"
+                <mat-form-field style="min-width: 240px;">
+                  <mat-label>Type of Instruction</mat-label>
+                  <mat-select
+                  formControlName="class"
                   name="className"
                   id="selectClass"
+                  required
                 >
-                  <option value="" disabled selected>
-                    -- Select type of Instruction --
-                  </option>
-                  <option value="btwt">License for Teens</option>
-                  <option value="btwa">License for Adults</option>
-                  <option value="re">Re-Examination</option>
-                  <option value="rc">Re-Certification</option>
-                  <option value="dic">Driver Improvement Clinic</option>
-                  <option value="btw">Behind The Wheel</option>
-                  <option value="dec">Driver's Education - Classroom</option>
-                  <option value="deo">Driver's Education - Online</option>
-                  <option value="pdl">Private Drivig Lessons</option>
-                  <option value="spt">Special Package for Teens</option>
-                  <option value="spa">Special Package for Adults</option>
-                </select>
+                  <mat-option value="btwt">License for Teens</mat-option>
+                  <mat-option value="btwa">License for Adults</mat-option>
+                  <mat-option value="re">Re-Examination</mat-option>
+                  <mat-option value="rc">Re-Certification</mat-option>
+                  <mat-option value="dic">Driver Improvement Clinic</mat-option>
+                  <mat-option value="btw">Behind The Wheel</mat-option>
+                  <mat-option value="dec">Driver's Education - Classroom</mat-option>
+                  <mat-option value="deo">Driver's Education - Online</mat-option>
+                  <mat-option value="pdl">Private Drivig Lessons</mat-option>
+                  <mat-option value="spt">Special Package for Teens</mat-option>
+                  <mat-option value="spa">Special Package for Adults</mat-option>
+                </mat-select>
+                </mat-form-field>
+               
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-3">
               <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  name="fname"
-                  placeholder="First Name *"
-                />
+                <mat-form-field>
+                  <mat-label>First Name</mat-label>
+                  <input
+                    matInput 
+                    type="text"
+                    name="fname"
+                    formControlName="fname"
+                    required
+                  />
+                </mat-form-field>
               </div>
             </div>
             <div class="col-md-3">
               <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  name="mname"
-                  placeholder="Middle Name"
-                />
+                <mat-form-field>
+                  <mat-label>Middle Name</mat-label>
+                  <input
+                    matInput 
+                    type="text"
+                    name="mname"
+                    formControlName="mname"
+                  />
+                </mat-form-field>
               </div>
             </div>
             <div class="col-md-3">
               <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  name="lname"
-                  placeholder="Last Name *"
-                />
+                <mat-form-field>
+                  <mat-label>Last Name</mat-label>
+                  <input
+                    matInput 
+                    type="text"
+                    name="lname"
+                    formControlName="lname"
+                    required
+                  />
+                </mat-form-field>
               </div>
             </div>
           </div>
-          <div class="row align-bottom">
+          <div class="row align-center">
             <div class="col-md-3">
               <div class="form-group">
-                <label for="dob">Date of Birth</label>
-                <input type="date" class="form-control" name="dob" />
+                <mat-form-field>
+                  <mat-label>Date of Birth</mat-label>
+                  <input
+                    matInput 
+                    type="date"
+                    name="dob"
+                    formControlName="dob"
+                    required
+                  />
+                </mat-form-field>
               </div>
             </div>
             <div class="col-md-3">
               <div class="form-group sexRadio">
-                <span>
-                  <input type="radio" id="male" name="sex" value="male" />
-                  <label for="male">Male</label><br /></span
-                ><span>
-                  <input type="radio" id="female" name="sex" value="female" />
-                  <label for="female">Female</label><br
-                /></span>
+                <mat-radio-group aria-label="Select an option" formControlName="sex">
+                  <mat-radio-button value="male">Male</mat-radio-button>
+                  <mat-radio-button value="female">Female</mat-radio-button>
+                </mat-radio-group>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-3">
               <div class="form-group">
-                <input
-                  type="tel"
-                  class="form-control"
-                  name="phone"
-                  placeholder="Phone *"
-                />
+                <mat-form-field>
+                  <mat-label>Phone Number</mat-label>
+                  <input
+                    matInput 
+                    type="text"
+                    name="phone"
+                    formControlName="phone"
+                    required
+                  />
+                </mat-form-field>
               </div>
             </div>
             <div class="col-md-3">
               <div class="form-group">
-                <input
-                  type="email"
-                  class="form-control"
-                  name="email"
-                  placeholder="Email *"
-                />
+                <mat-form-field>
+                  <mat-label>Email</mat-label>
+                  <input
+                    matInput 
+                    type="email"
+                    name="email"
+                    formControlName="email"
+                  />
+                </mat-form-field>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-3">
               <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  name="address"
-                  placeholder="Address *"
-                />
+                <mat-form-field class="full-width">
+                  <mat-label>Address</mat-label>
+                  <input
+                    matInput 
+                    type="text"
+                    name="address"
+                    formControlName="address"
+                    required
+                  />
+                </mat-form-field>
               </div>
             </div>
             <div class="col-md-3">
               <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  name="city"
-                  placeholder="City *"
-                />
+                <mat-form-field>
+                  <mat-label>City</mat-label>
+                  <input
+                    matInput 
+                    type="text"
+                    name="city"
+                    formControlName="city"
+                    required
+                  />
+                </mat-form-field>
               </div>
             </div>
             <div class="col-md-3">
               <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  name="zipcode"
-                  placeholder="Zip Code *"
-                />
+                <mat-form-field>
+                  <mat-label>State</mat-label>
+                  <input
+                    matInput 
+                    type="text"
+                    name="state"
+                    formControlName="state"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <mat-form-field>
+                  <mat-label>Zip Code</mat-label>
+                  <input
+                    matInput 
+                    type="text"
+                    name="zip"
+                    formControlName="zip"
+                    required
+                  />
+                </mat-form-field>
               </div>
             </div>
           </div>
           <div class="row align-bottom">
             <div class="col-md-3">
               <div class="form-group">
-                <label for="psd">Preferred Start Date</label>
-                <input type="date" class="form-control" name="psd" />
+                <mat-form-field>
+                  <mat-label>Preferred Start Date</mat-label>
+                  <input
+                    matInput 
+                    type="date"
+                    name="psd"
+                    formControlName="preferredStartDate"
+                    [min]="tomorrow"
+                  />
+                </mat-form-field>
               </div>
             </div>
             <div class="col-md-3">
               <div class="form-group">
-                <label for="dob">Preferred Start Time</label>
-                <input type="time" class="form-control" name="dob" />
+                <mat-form-field>
+                  <mat-label>Preferred Start Time</mat-label>
+                  <input
+                    matInput 
+                    type="time"
+                    name="pst"
+                    formControlName="preferredStartTime"
+                  />
+                </mat-form-field>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
-                <textarea
-                  rows="5"
-                  class="form-control"
-                  name="comment"
-                  placeholder="Message / Comments"
-                  style="height: 150px"
-                ></textarea>
+                <mat-form-field class="full-width">
+                  <mat-label>Comments</mat-label>
+                  <textarea
+                    matInput 
+                    name="comments"
+                    formControlName="comments"
+                  ></textarea>
+                </mat-form-field>
               </div>
             </div>
             <div class="col-md-12">

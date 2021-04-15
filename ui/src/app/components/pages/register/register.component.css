@@ -2,26 +2,14 @@
   padding: 50px 0;
 }
 
-#selectClass {
-  height: 50px;
-  padding: 10px;
-}
-
-.sexRadio {
-  display: flex;
+.align-center {
   align-items: center;
-  height: 50px;
-  justify-content: space-around;
-  width: 180px;
 }
 
-.sexRadio label {
-  margin: 0;
-}
-.sexRadio input {
-  margin-right: 3px;
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 10px;
 }
 
-.align-bottom {
-  align-items: flex-end;
+.full-width {
+  width: 100%;
 }
