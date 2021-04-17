@@ -129,8 +129,8 @@ export class RegisterComponent implements OnInit {
   }
 
   public submitRegistration() {
-    const url = `https://qgsw8guhb1.execute-api.us-east-1.amazonaws.com/default/pdsemaillambda`
-    this.apiGateway.doPost(url, {
+    const path = `/default/pdsemaillambda`
+    this.apiGateway.doPost(path, {
       subject: `New Registration - ${this.studentFullName()}`,
       body: this.buildEmailString()
     })

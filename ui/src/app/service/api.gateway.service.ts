@@ -11,8 +11,9 @@ export class ApiGatewayService {
 
     constructor() {}
 
-    doPost(url ,body): Promise<any> {
+    doPost(path ,body): Promise<any> {
         
+        const url = `${environment.apiGatewayURL}${path}`
         const service= 'execute-api'
         const region = 'us-east-1'
 
