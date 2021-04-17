@@ -1,7 +1,8 @@
 export const environment = {
     pdsUserKey: 'devKey',
     pdsUserSecret: 'devSecret',
-    apiKey: 'undefined',
-    apiGatewayURL: 'undefined',
-    production: false
+    apiKey: 'apiKey',
+    apiGatewayURL: 'secretUrl',
+    production: false,
+    recaptchaKey: 'recaptchaKey'
 };

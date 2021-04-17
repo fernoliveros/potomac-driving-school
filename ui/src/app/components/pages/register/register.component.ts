@@ -1,12 +1,10 @@
-import { Component, ElementRef, OnDestroy, OnInit, ɵɵsetComponentScope } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiGatewayService } from 'src/app/service/api.gateway.service';
 import * as moment from "moment";
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorModal } from '../../common/error.modal/error.modal.component';
-import { ReCaptchaV3Service } from 'ngx-captcha';
-import { ReCaptchaForm } from 'src/app/abstract/recaptcha';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -14,7 +12,7 @@ import { environment } from 'src/environments/environment';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
-export class RegisterComponent implements OnInit, OnDestroy {
+export class RegisterComponent implements OnInit {
   public classSelect = new FormControl('');
   public registrationForm: FormGroup;
   public tomorrow: any = new Date();
@@ -75,10 +73,6 @@ export class RegisterComponent implements OnInit, OnDestroy {
       comments: [''],
       recaptcha: ['', Validators.required]
     })
-  }
-
-  ngOnDestroy(): void {
-    
   }
 
   public submitRegistration() {
