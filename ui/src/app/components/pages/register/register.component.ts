@@ -71,64 +71,6 @@ export class RegisterComponent implements OnInit {
     })
   }
 
-  public phoneKeyUpEvent(e): void {
-    const phoneNum = e.target.value
-    const isDelete = e.key === "Backspace"
-
-    if (isDelete) {
-      this.handlePhoneDelete(phoneNum, e)
-    } else {
-      this.handlePhoneAddChar(phoneNum, e)
-    }
-  }
-
-  private handlePhoneDelete(phoneNum, e): void {
-    const len = phoneNum.length
-    switch (len) {
-      case 13:
-        this.setPhone(phoneNum.substr(0,9), e)
-        break
-      case 7:
-        this.setPhone(phoneNum.substr(0,4), e)
-        break
-      case 2:
-        this.setPhone('',e)
-        break
-    }
-  }
-
-  private handlePhoneAddChar(phoneNum, e): void {
-    const len = phoneNum.length
-    const newChar = e.key
-    if (!/\d/.test(newChar)) {
-      this.stopEvent(e)
-    } else {
-      switch (len) {
-        case 0:
-          this.setPhone('(' + phoneNum + newChar, e)
-          break
-        case 4:
-          this.setPhone(phoneNum + ') ' + newChar, e)
-          break
-        case 9:
-          this.setPhone(phoneNum + ' - ' + newChar, e)
-          break
-        case 16:
-          this.stopEvent(e)
-      }
-    }
-  }
-
-  private stopEvent(e): void {
-    e.preventDefault();
-    e.stopPropagation();
-  }
-
-  private setPhone(formattedPhone, e): void {
-    this.stopEvent(e)
-    this.registrationForm.patchValue({ phone: formattedPhone }, { emitEvent: false })
-  }
-
   private getFormVal(controlName: string): any {
     return this.registrationForm.get(controlName).value
   }

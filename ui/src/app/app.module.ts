@@ -18,6 +18,7 @@ import { AdultsComponent } from './components/pages/adults/adults.component';
 import { RegisterComponent } from './components/pages/register/register.component';
 import { PostComponent } from './components/common/post/post.component';
 import { CardComponent } from './components/common/card/card.component';
+import { PhoneNumberDirective } from './directives/phone.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -41,6 +42,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     RegisterComponent,
     PostComponent,
     CardComponent,
+    PhoneNumberDirective
   ],
   imports: [
     BrowserModule,
