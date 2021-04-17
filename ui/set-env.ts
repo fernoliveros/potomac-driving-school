@@ -6,7 +6,7 @@ const envConfigFile = `export const environment = {
     pdsUserKey: '${process.env.PDS_USER_KEY}',
     pdsUserSecret: '${process.env.PDS_USER_SECRET}',
     apiKey: '${process.env.API_KEY}',
-    baseURL: '${process.env.API_GATEWAY_URL}',
+    apiGatewayURL: '${process.env.API_GATEWAY_URL}',
     production: ${process.env.PRODUCTION}
 };
 `;

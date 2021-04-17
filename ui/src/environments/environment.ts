@@ -1,6 +1,7 @@
 export const environment = {
     pdsUserKey: 'devKey',
     pdsUserSecret: 'devSecret',
-    apiKey: 'apiKey',
+    apiKey: 'undefined',
+    apiGatewayURL: 'undefined',
     production: false
 };
