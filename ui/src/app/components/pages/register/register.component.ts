@@ -1,22 +1,26 @@
-import { Component, ElementRef, OnInit, ɵɵsetComponentScope } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ɵɵsetComponentScope } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiGatewayService } from 'src/app/service/api.gateway.service';
 import * as moment from "moment";
 import { MatDialog } from '@angular/material/dialog';
 import { ErrorModal } from '../../common/error.modal/error.modal.component';
+import { ReCaptchaV3Service } from 'ngx-captcha';
+import { ReCaptchaForm } from 'src/app/abstract/recaptcha';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit, OnDestroy {
   public classSelect = new FormControl('');
   public registrationForm: FormGroup;
   public tomorrow: any = new Date();
   public emailSuccess = false;
   public today = moment().format('L')
+  public siteKey = environment.recaptchaKey
 
   classNameMap: Map<string, string> = new Map([
     ["btwt", "License for Teens"],
@@ -69,7 +73,12 @@ export class RegisterComponent implements OnInit {
       preferredStartDate: [''],
       preferredStartTime: [''],
       comments: [''],
+      recaptcha: ['', Validators.required]
     })
+  }
+
+  ngOnDestroy(): void {
+    
   }
 
   public submitRegistration() {

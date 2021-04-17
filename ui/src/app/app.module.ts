@@ -28,6 +28,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ErrorModal } from './components/common/error.modal/error.modal.component';
 import { InvalidControlScrollDirective } from './directives/invalid.scroll.directive';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { InvalidControlScrollDirective } from './directives/invalid.scroll.direc
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatDialogModule
+    MatDialogModule,
+    NgxCaptchaModule
   ],
   providers: [],
   bootstrap: [AppComponent],

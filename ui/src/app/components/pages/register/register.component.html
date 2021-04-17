@@ -166,6 +166,16 @@
                 </mat-form-field>
               </div>
             </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <ngx-recaptcha2 #captchaElem
+                      [siteKey]="siteKey"
+                      formControlName="recaptcha">
+                </ngx-recaptcha2>
+                </div>
+              </div>
+            </div>
             <div class="col-md-12">
               <button type="submit" (click)="submitRegistration()" class="btn btn-secondary btn-lg wow tada">
                 Submit
