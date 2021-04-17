@@ -2,3 +2,20 @@
     color: white;
     font-size: 22px;
 }
+
+.social-media-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media only screen and (max-width: 750px) {
+    .social-media-container {
+        display: flex;
+        justify-content: start;
+    }
+
+    .contact-info-container {
+        display: flex;
+        justify-content: start;
+    }
+}

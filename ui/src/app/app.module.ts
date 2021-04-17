@@ -25,6 +25,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule} from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker'; 
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ErrorModal } from './components/common/error.modal/error.modal.component';
+import { InvalidControlScrollDirective } from './directives/invalid.scroll.directive';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     RegisterComponent,
     PostComponent,
     CardComponent,
-    PhoneNumberDirective
+    PhoneNumberDirective,
+    ErrorModal,
+    InvalidControlScrollDirective
   ],
   imports: [
     BrowserModule,
@@ -55,7 +60,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatSelectModule,
     MatRadioModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],

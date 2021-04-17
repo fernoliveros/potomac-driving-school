@@ -1,4 +1,9 @@
-.some-padding {
+:host {
+  display: block;
+  min-height: calc(100% - 146px); /* 146px is height of the footer */
+}
+
+.body-container {
   padding: 50px 0;
 }
 
@@ -18,4 +23,38 @@
   font-size: 12px;
   color: #808080;
   padding: 0 15px;
+}
+
+.email-success {
+  display: flex;
+  justify-content: center;
+}
+
+.success-msg-title {
+  font-size: 22px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  min-width: 280px
+}
+
+
+.success-msg-title img { 
+  margin-left: 10px;
+}
+
+.success-msg-body {
+  margin-top: 10px;
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+
+@media only screen and (min-width: 500px) {
+  .success-msg-container {
+    border: 1px solid #aaaaaa;
+    border-radius: 3px;
+    width: fit-content;
+    padding: 25px;
+  }
 }

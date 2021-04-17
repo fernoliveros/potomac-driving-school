@@ -1,8 +1,10 @@
-import { Component, OnInit, ɵɵsetComponentScope } from '@angular/core';
+import { Component, ElementRef, OnInit, ɵɵsetComponentScope } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiGatewayService } from 'src/app/service/api.gateway.service';
 import * as moment from "moment";
+import { MatDialog } from '@angular/material/dialog';
+import { ErrorModal } from '../../common/error.modal/error.modal.component';
 
 @Component({
   selector: 'app-register',
@@ -13,8 +15,7 @@ export class RegisterComponent implements OnInit {
   public classSelect = new FormControl('');
   public registrationForm: FormGroup;
   public tomorrow: any = new Date();
-
-
+  public emailSuccess = false;
   public today = moment().format('L')
 
   classNameMap: Map<string, string> = new Map([
@@ -40,7 +41,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private apiGateway: ApiGatewayService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private dialog: MatDialog
   ) {
     this.tomorrow.setDate(this.tomorrow.getDate() + 1);
     this.tomorrow = this.tomorrow.toISOString().split("T")[0];
@@ -49,7 +51,6 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe((qp: { cc: string }) => {
       this.classSelect.setValue(qp.cc);
-      console.log(this.classSelect.value);
     });
 
     this.registrationForm = this.fb.group({
@@ -71,16 +72,29 @@ export class RegisterComponent implements OnInit {
     })
   }
 
+  public submitRegistration() {
+    if (this.registrationForm.valid) {
+      const path = `/default/pdsemaillambda`
+      this.apiGateway.doPost(path, {
+        subject: `New Registration - ${this.studentFullName()}`,
+        body: this.buildEmailString()
+      }).then(resp => {
+        if (resp.statusCode === 200) {
+          this.emailSuccess = true;
+        } else {
+          this.handleEmailFailure()
+        }
+      })
+    }
+  }
+
   private getFormVal(controlName: string): any {
     return this.registrationForm.get(controlName).value
   }
 
   private buildEmailString() {
-    // map value could be undefined
-    const possibleClassName = this.classNameMap.get(this.getFormVal('class'))
-
-    const className = possibleClassName ? possibleClassName : 'Error getting class name',
-     
+    const possibleClassName = this.classNameMap.get(this.getFormVal('class')),
+      className = possibleClassName ? possibleClassName : 'Error getting class name',
       sex = this.getFormVal('sex'),
       phone = this.getFormVal('phone'),
       email = this.getFormVal('email'),
@@ -88,51 +102,49 @@ export class RegisterComponent implements OnInit {
       city = this.getFormVal('city'),
       state = this.getFormVal('state'),
       zip = this.getFormVal('zip'),
-      preferredStartDate = this.getFormVal('preferredStartDate'),
-      preferredStartTime = this.getFormVal('preferredStartTime'),
-      comments = this.getFormVal('comments')
-
-    let preferredStart: any
-    if (preferredStartDate && preferredStartTime) {
-      preferredStart = moment(new Date(preferredStartDate + ' ' + preferredStartTime).getTime()).format('LLL')
-    } else if (preferredStartDate) {
-      preferredStart = moment(new Date(preferredStartDate).getTime()).format('ll')
-    } else if (preferredStartTime) {
-      preferredStart = moment(new Date(this.today + ' ' + preferredStartTime).getTime()).format('LT')
-    }
-
-    let dob = this.getFormVal('dob')
-    dob = moment(new Date(dob).getTime()).format('L')
-
-    const ret = [
-      `Class: ${className}`,
-      `Name: ${this.studentFullName()}`,
-      `DOB: ${dob}`,
-      `Address: ${address} ${city}, ${state} ${zip}`,
-      `Phone: ${phone}`,
-      // fields above are required, below are optional so check
-      `Sex: ${sex ? sex : 'N/A'}`,
-      `Email: ${email ? email : 'N/A'}`,
-      `Preferred Start: ${preferredStart ? preferredStart : 'N/A'}`,
-      `Comments: ${comments ? comments : 'N/A'}`
-    ]
-
+      comments = this.getFormVal('comments'),
+      preferredStart = this.getPreferredStartDate(),
+      dob = this.getFormVal('dob'),
+      formattedDob = moment(new Date(dob).getTime()).format('L'),
+      ret = [
+        `Class: ${className}`,
+        `Name: ${this.studentFullName()}`,
+        `DOB: ${formattedDob}`,
+        `Address: ${address} ${city}, ${state} ${zip}`,
+        `Phone: ${phone}`,
+        // fields above are required, below are optional so check
+        `Sex: ${sex ? sex : 'N/A'}`,
+        `Email: ${email ? email : 'N/A'}`,
+        `Preferred Start: ${preferredStart ? preferredStart : 'N/A'}`,
+        `Comments: ${comments ? comments : 'N/A'}`
+      ]
     return ret.join('\n')
   }
 
-  private studentFullName(): string {
-    const  fname = this.getFormVal('fname'),
-    mname = this.getFormVal('mname'),
-    lname = this.getFormVal('lname')
-    
-    return `${fname} ${mname} ${lname}`
+  private studentFullName(): string {    
+    return `${this.getFormVal('fname')} ${this.getFormVal('mname')} ${this.getFormVal('lname')}`
   }
 
-  public submitRegistration() {
-    const path = `/default/pdsemaillambda`
-    this.apiGateway.doPost(path, {
-      subject: `New Registration - ${this.studentFullName()}`,
-      body: this.buildEmailString()
+  private getPreferredStartDate() {
+    const preferredStartDate = this.getFormVal('preferredStartDate'),
+    preferredStartTime = this.getFormVal('preferredStartTime')
+    if (preferredStartDate && preferredStartTime) {
+      return moment(new Date(preferredStartDate + ' ' + preferredStartTime).getTime()).format('LLL')
+    } else if (preferredStartDate) {
+      return moment(new Date(preferredStartDate).getTime()).format('ll')
+    } else if (preferredStartTime) {
+      return moment(new Date(this.today + ' ' + preferredStartTime).getTime()).format('LT')
+    }
+    return undefined
+  }
+
+  private handleEmailFailure(): void {
+    this.dialog.open(ErrorModal, {
+      width: '470px',
+      data: {
+        errorTitle: 'There was an error submitting your registration',
+        errorMessage: 'Please try again later or contact us directly at 571-333-8887 or info@potomacdriving.com'
+      }
     })
   }
 }
