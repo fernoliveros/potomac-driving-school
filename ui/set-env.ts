@@ -8,7 +8,7 @@ const envConfigFile = `export const environment = {
     apiKey: '${process.env.API_KEY}',
     apiGatewayURL: '${process.env.API_GATEWAY_URL}',
     production: ${process.env.PRODUCTION},
-    recaptchaKey: ${process.env.RECAPTCHA_SITE_KEY}
+    recaptchaKey: '${process.env.RECAPTCHA_SITE_KEY}'
 };
 `;
 console.log(colors.magenta('The file `environment.ts` will be written with the following content: \n'));
