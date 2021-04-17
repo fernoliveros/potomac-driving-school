@@ -60,7 +60,7 @@ export class RegisterComponent implements OnInit {
       dob: ['', Validators.required],
       sex: [''],
       phone: ['', Validators.required],
-      email: [''],
+      email: ['', [Validators.required, Validators.email]],
       address: ['', Validators.required],
       city: ['', Validators.required],
       state: ['VA', Validators.required],
@@ -138,9 +138,7 @@ export class RegisterComponent implements OnInit {
     const possibleClassName = this.classNameMap.get(this.getFormVal('class'))
 
     const className = possibleClassName ? possibleClassName : 'Error getting class name',
-      fname = this.getFormVal('fname'),
-      mname = this.getFormVal('mname'),
-      lname = this.getFormVal('lname'),
+     
       sex = this.getFormVal('sex'),
       phone = this.getFormVal('phone'),
       email = this.getFormVal('email'),
@@ -166,7 +164,7 @@ export class RegisterComponent implements OnInit {
 
     const ret = [
       `Class: ${className}`,
-      `Name: ${fname} ${mname} ${lname}`,
+      `Name: ${this.studentFullName()}`,
       `DOB: ${dob}`,
       `Address: ${address} ${city}, ${state} ${zip}`,
       `Phone: ${phone}`,
@@ -180,10 +178,18 @@ export class RegisterComponent implements OnInit {
     return ret.join('\n')
   }
 
+  private studentFullName(): string {
+    const  fname = this.getFormVal('fname'),
+    mname = this.getFormVal('mname'),
+    lname = this.getFormVal('lname')
+    
+    return `${fname} ${mname} ${lname}`
+  }
+
   public submitRegistration() {
     const url = `https://qgsw8guhb1.execute-api.us-east-1.amazonaws.com/default/pdsemaillambda`
     this.apiGateway.doPost(url, {
-      subject: 'New Student Registration',
+      subject: `New Registration - ${this.studentFullName()}`,
       body: this.buildEmailString()
     })
   }
