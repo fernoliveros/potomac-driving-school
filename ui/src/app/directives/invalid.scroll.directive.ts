@@ -39,7 +39,7 @@ export class InvalidControlScrollDirective {
     }
 
     private getTopOffset(controlEl: HTMLElement): number {
-        const labelOffset = 50;
+        const labelOffset = 90;
         return controlEl.getBoundingClientRect().top + window.scrollY - labelOffset;
     }
 }

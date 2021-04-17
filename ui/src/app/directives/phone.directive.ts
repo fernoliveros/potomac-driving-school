@@ -17,9 +17,15 @@ export class PhoneNumberDirective {
   @HostListener('keydown', ['$event']) onKeyDown(e): void {
     const phoneNum = e.target.value
     const isDelete = e.key === "Backspace"
-
+    
+    // loose way to determine key pressed is not a printable character, 
+    // rather a control key like tab, enter, or arrow
+    const isControlKey = e.key.length > 1 
+    
     if (isDelete) {
       this.handlePhoneDelete(phoneNum, e)
+    } else if (isControlKey) {
+      return 
     } else {
       this.handlePhoneAddChar(phoneNum, e)
     }
