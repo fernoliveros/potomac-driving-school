@@ -80,7 +80,9 @@ export class RegisterComponent implements OnInit {
       const path = `/default/pdsemaillambda`
       this.apiGateway.doPost(path, {
         subject: `New Registration - ${this.studentFullName()}`,
-        body: this.buildEmailString()
+        body: this.buildEmailString(),
+        studentEmail: this.getFormVal('email'),
+        studentEmailBody: this.buildStudentEmailString()
       }).then(resp => {
         if (resp.statusCode === 200) {
           this.emailSuccess = true;
@@ -120,6 +122,20 @@ export class RegisterComponent implements OnInit {
         `Email: ${email ? email : 'N/A'}`,
         `Preferred Start: ${preferredStart ? preferredStart : 'N/A'}`,
         `Comments: ${comments ? comments : 'N/A'}`
+      ]
+    return ret.join('\n')
+  }
+
+  private buildStudentEmailString() {
+    const possibleClassName = this.classNameMap.get(this.getFormVal('class')),
+      className = possibleClassName ? possibleClassName : 'Error getting class name',
+      ret = [
+        `${this.getFormVal('fname')},\n`,
+        `We have received your registration for ${className}, and will be in contact with you soon\n`,
+        `If you have any questions feel free to contact us at info@potomacdriving.com or at 571-333-8887\n`,
+        `Thank you,\n`,
+        `Potomac Driving School\n`,
+        `This is an automated email, please do not reply`,
       ]
     return ret.join('\n')
   }
