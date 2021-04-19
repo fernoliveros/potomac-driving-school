@@ -9,56 +9,87 @@
     </div>
   </div>
 </div>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+      </div>
+    </div>
+  </div>
+</section>
 <section class="section-padding contact">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="title">
-        	<h6 class="text-center">Contact us</h6>
-            <h2 class="text-center">Send us a mail</h2>
+          <h2 class="text-center">Send us a message</h2>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
-        <form action="process.php" method="post" name="ContactForm" id="ContactForm" >
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="text" class="form-control" name="fname" placeholder="First Name *">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="text" class="form-control" name="lname" placeholder="Last Name *">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="tel" class="form-control" name="phone" placeholder="Phone">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="email" class="form-control" name="email" placeholder="Email *">
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="form-group">
-                  <textarea rows="5" class="form-control" name="comment" placeholder="Your Message *" style="height:150px"></textarea>
-                </div>
-              </div>
-              <div class="col-md-12">
-                
-                <button type="submit" class="btn btn-secondary btn-lg wow tada">Submit</button>
+        <form action="process.php" method="post" name="ContactForm" id="ContactForm" [formGroup]="emailForm"  #contactForm
+          appInvalidControlScroll>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group">
+                <mat-form-field>
+                  <mat-label>First Name</mat-label>
+                  <input matInput type="text" name="fname" formControlName="fname" required />
+                </mat-form-field>
               </div>
             </div>
-          </form>
-      </div>  
+            <div class="col-md-3">
+              <div class="form-group">
+                <mat-form-field>
+                  <mat-label>Last Name</mat-label>
+                  <input matInput type="text" name="lname" formControlName="lname" required />
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <mat-form-field style="max-width: 120px;">
+                  <mat-label>Phone Number</mat-label>
+                  <input matInput phoneNumber type="tel" name="phone" formControlName="phone" required />
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <mat-form-field>
+                  <mat-label>Email</mat-label>
+                  <input matInput type="email" name="email" formControlName="email" required />
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <mat-form-field class="full-width">
+                  <mat-label>Your Message</mat-label>
+                  <textarea matInput name="message" formControlName="message" required></textarea>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha">
+                </ngx-recaptcha2>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <button type="submit" class="btn btn-secondary btn-lg wow tada" (click)="submitMessage()">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </section>
 <div class="map-section">
-<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d910.3418083012626!2d133.87879092761608!3d-23.69972051050488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbe505f1c21d16c3a!2sKFC%20Alice%20Springs!5e0!3m2!1sen!2sin!4v1569671193995!5m2!1sen!2sin" width="600" height="450" style="border:0; width:100%; height:500px;" allowfullscreen=""></iframe> -->
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193.81764724020962!2d-77.42405003227528!3d38.99061673899655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b6385ff95858a9%3A0x23b63b3e7f4b4611!2s22636%20Glenn%20Dr%2C%20Sterling%2C%20VA%2020164!5e0!3m2!1sen!2sus!4v1597893487387!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0; width:100%; height:500px;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+  <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d910.3418083012626!2d133.87879092761608!3d-23.69972051050488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbe505f1c21d16c3a!2sKFC%20Alice%20Springs!5e0!3m2!1sen!2sin!4v1569671193995!5m2!1sen!2sin" width="600" height="450" style="border:0; width:100%; height:500px;" allowfullscreen=""></iframe> -->
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193.81764724020962!2d-77.42405003227528!3d38.99061673899655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b6385ff95858a9%3A0x23b63b3e7f4b4611!2s22636%20Glenn%20Dr%2C%20Sterling%2C%20VA%2020164!5e0!3m2!1sen!2sus!4v1597893487387!5m2!1sen!2sus"
+    width="600" height="450" frameborder="0" style="border:0; width:100%; height:500px;" allowfullscreen=""
+    aria-hidden="false" tabindex="0"></iframe>
 </div>

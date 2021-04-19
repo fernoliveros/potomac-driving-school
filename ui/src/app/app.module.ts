@@ -26,7 +26,7 @@ import { MatRadioModule} from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker'; 
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ErrorModal } from './components/common/error.modal/error.modal.component';
+import { AlertModal } from './components/common/alert.modal/alert.modal.component';
 import { InvalidControlScrollDirective } from './directives/invalid.scroll.directive';
 import { NgxCaptchaModule } from 'ngx-captcha';
 
@@ -47,7 +47,7 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     PostComponent,
     CardComponent,
     PhoneNumberDirective,
-    ErrorModal,
+    AlertModal,
     InvalidControlScrollDirective
   ],
   imports: [

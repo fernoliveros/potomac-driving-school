@@ -1,24 +1,27 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiGatewayService } from 'src/app/service/api.gateway.service';
 import * as moment from "moment";
 import { MatDialog } from '@angular/material/dialog';
-import { ErrorModal } from '../../common/error.modal/error.modal.component';
 import { environment } from 'src/environments/environment';
+import { EmailForm } from 'src/app/abstract/email.form';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent extends EmailForm implements OnInit {
   public classSelect = new FormControl('');
   public registrationForm: FormGroup;
   public tomorrow: any = new Date();
   public emailSuccess = false;
   public today = moment().format('L')
-  public siteKey = environment.recaptchaKey
+
+  /* 2 fields below for abstract class EmailForm*/
+  protected emailForm: FormGroup;
+  protected emailFailTitle = 'There was an error submitting your registration'
 
   classNameMap: Map<string, string> = new Map([
     ["btwt", "License for Teens"],
@@ -42,10 +45,11 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private apiGateway: ApiGatewayService,
+    protected apiGateway: ApiGatewayService,
     private fb: FormBuilder,
-    private dialog: MatDialog
+    protected dialog: MatDialog
   ) {
+    super(apiGateway, dialog)
     this.tomorrow.setDate(this.tomorrow.getDate() + 1);
     this.tomorrow = this.tomorrow.toISOString().split("T")[0];
   }
@@ -55,14 +59,14 @@ export class RegisterComponent implements OnInit {
       this.classSelect.setValue(qp.cc);
     });
 
-    this.registrationForm = this.fb.group({
+    this.emailForm = this.registrationForm = this.fb.group({
       class: ['', Validators.required],
       fname: ['', Validators.required],
       mname: [''],
       lname: ['', Validators.required],
       dob: ['', Validators.required],
       sex: [''],
-      phone: ['', [Validators.required, Validators.minLength(16)]],
+      phone: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       address: ['', Validators.required],
       city: ['', Validators.required],
@@ -76,25 +80,13 @@ export class RegisterComponent implements OnInit {
   }
 
   public submitRegistration() {
-    if (this.registrationForm.valid) {
-      const path = `/default/pdsemaillambda`
-      this.apiGateway.doPost(path, {
-        subject: `New Registration - ${this.studentFullName()}`,
-        body: this.buildEmailString(),
-        studentEmail: this.getFormVal('email'),
-        studentEmailBody: this.buildStudentEmailString()
-      }).then(resp => {
-        if (resp.statusCode === 200) {
-          this.emailSuccess = true;
-        } else {
-          this.handleEmailFailure()
-        }
-      })
-    }
-  }
-
-  private getFormVal(controlName: string): any {
-    return this.registrationForm.get(controlName).value
+    this.submitEmailForm({
+      subject: `New Registration - ${this.studentFullName()}`,
+      body: this.buildEmailString(),
+      studentEmail: this.getFormVal('email'),
+      studentEmailSubject: 'Potomac Driving School - Registration Confirmation',
+      studentEmailBody: this.buildStudentEmailString()
+    })
   }
 
   private buildEmailString() {
@@ -131,22 +123,22 @@ export class RegisterComponent implements OnInit {
       className = possibleClassName ? possibleClassName : 'Error getting class name',
       ret = [
         `${this.getFormVal('fname')},\n`,
-        `We have received your registration for ${className}, and will be in contact with you soon\n`,
-        `If you have any questions feel free to contact us at info@potomacdriving.com or at 571-333-8887\n`,
+        `We have received your registration for ${className} and will be in contact with you soon\n`,
+        `If you have any questions feel free to contact us at info@potomacdriving.com or 571-333-8887\n`,
         `Thank you,\n`,
         `Potomac Driving School\n`,
-        `This is an automated email, please do not reply`,
+        `This is an automated email do not reply`,
       ]
     return ret.join('\n')
   }
 
-  private studentFullName(): string {    
+  private studentFullName(): string {
     return `${this.getFormVal('fname')} ${this.getFormVal('mname')} ${this.getFormVal('lname')}`
   }
 
   private getPreferredStartDate() {
     const preferredStartDate = this.getFormVal('preferredStartDate'),
-    preferredStartTime = this.getFormVal('preferredStartTime')
+      preferredStartTime = this.getFormVal('preferredStartTime')
     if (preferredStartDate && preferredStartTime) {
       return moment(new Date(preferredStartDate + ' ' + preferredStartTime).getTime()).format('LLL')
     } else if (preferredStartDate) {
@@ -157,13 +149,7 @@ export class RegisterComponent implements OnInit {
     return undefined
   }
 
-  private handleEmailFailure(): void {
-    this.dialog.open(ErrorModal, {
-      width: '470px',
-      data: {
-        errorTitle: 'There was an error submitting your registration',
-        errorMessage: 'Please try again later or contact us directly at 571-333-8887 or info@potomacdriving.com'
-      }
-    })
+  protected handleEmailSuccess(): void {
+    this.emailSuccess = true;
   }
 }
