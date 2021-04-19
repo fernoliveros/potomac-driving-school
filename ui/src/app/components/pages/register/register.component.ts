@@ -4,7 +4,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { ApiGatewayService } from 'src/app/service/api.gateway.service';
 import * as moment from "moment";
 import { MatDialog } from '@angular/material/dialog';
-import { environment } from 'src/environments/environment';
 import { EmailForm } from 'src/app/abstract/email.form';
 
 @Component({
@@ -41,7 +40,6 @@ export class RegisterComponent extends EmailForm implements OnInit {
     'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO',
     'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY',
   ]
-
 
   constructor(
     private route: ActivatedRoute,
