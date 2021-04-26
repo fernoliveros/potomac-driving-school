@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 declare var $: any;
 
 @Component({
@@ -19,7 +20,9 @@ export class Home1Component implements OnInit {
   points back on their driving record, and for drivers that are
   mandated to take it by either a court or the DMV.`;
 
-  constructor() {}
+  constructor(
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     $.getScript('../assets/js/main.js');
@@ -30,6 +33,6 @@ export class Home1Component implements OnInit {
   }
 
   onRegister(link) {
-    console.log(link);
+    this.router.navigate(['register'], {queryParams: {cc: link}})
   }
 }

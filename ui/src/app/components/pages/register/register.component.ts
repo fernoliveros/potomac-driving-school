@@ -53,10 +53,6 @@ export class RegisterComponent extends EmailForm implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe((qp: { cc: string }) => {
-      this.classSelect.setValue(qp.cc);
-    });
-
     this.emailForm = this.registrationForm = this.fb.group({
       class: ['', Validators.required],
       fname: ['', Validators.required],
@@ -75,6 +71,10 @@ export class RegisterComponent extends EmailForm implements OnInit {
       comments: [''],
       recaptcha: ['', Validators.required]
     })
+
+    this.route.queryParams.subscribe((qp: { cc: string }) => {
+      this.emailForm.get('class').setValue(qp.cc)
+    });
   }
 
   public submitRegistration() {

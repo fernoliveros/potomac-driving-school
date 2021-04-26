@@ -74,7 +74,8 @@ p{font-size:14px; line-height:24px;}
 /*           2.Header
 /*--------------------------------*/
 /*2.1. Home 1 Header*/
-.header-1{ background:url(assets/images/home_1_bg.jpg) no-repeat 0 0; background-position: center; background-attachment: fixed;width: 100%; background-size: cover;}
+.header-1{ 
+	background:url(assets/images/home_test_7.jpeg) no-repeat 0 0; background-position:bottom; background-attachment: fixed;width: 100%; background-size: cover;}
 .header-1-text{padding:110px 0 230px 0;}
 .header-1-text h5{font-size:24px; font-weight:300; color:#ea5539;}
 .header-1-text h2{font-size:60px; font-weight:600; color:#fff;}
@@ -354,4 +355,8 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
     -moz-appearance:textfield; /* Firefox */
+}
+
+.pointer {
+	cursor: pointer;
 }
