@@ -29,7 +29,8 @@ export class Home1Component implements OnInit {
   }
 
   onReadMore(link) {
-    console.log(link);
+    const page = link === 'dic' ? 'adults' : 'teens'
+    this.router.navigate([page], {queryParams: {cc: link}})
   }
 
   onRegister(link) {
