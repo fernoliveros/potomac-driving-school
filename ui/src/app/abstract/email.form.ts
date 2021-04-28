@@ -49,5 +49,6 @@ export interface PdsEmailPayload {
 	body: string,
 	studentEmail: string,
 	studentEmailSubject: string,
-	studentEmailBody: string
+	studentEmailBody: string,
+	registrationForm?: string
 }

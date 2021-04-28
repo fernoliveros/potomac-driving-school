@@ -78,12 +78,16 @@ export class RegisterComponent extends EmailForm implements OnInit {
   }
 
   public submitRegistration() {
+    
+    let formWthoutCaptcha = JSON.parse(JSON.stringify(this.emailForm.value))
+    delete formWthoutCaptcha['recaptcha'] 
     this.submitEmailForm({
       subject: `New Registration - ${this.studentFullName()}`,
       body: this.buildEmailString(),
       studentEmail: this.getFormVal('email'),
       studentEmailSubject: 'Potomac Driving School - Registration Confirmation',
-      studentEmailBody: this.buildStudentEmailString()
+      studentEmailBody: this.buildStudentEmailString(),
+      registrationForm: formWthoutCaptcha
     })
   }
 
