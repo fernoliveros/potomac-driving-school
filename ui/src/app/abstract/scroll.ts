@@ -28,6 +28,14 @@ export abstract class ScrollToElement {
             .subscribe(() => element.focus());
     }
 
+    protected scrollToPosition(top) {
+        window.scroll({
+            top,
+            left: 0,
+            behavior: "smooth"
+        });
+    }
+
     private getTopOffset(controlEl: HTMLElement): number {
         const labelOffset = 90;
         return controlEl.getBoundingClientRect().top + window.scrollY - labelOffset;

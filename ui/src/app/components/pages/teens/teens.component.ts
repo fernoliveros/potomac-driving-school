@@ -23,6 +23,8 @@ export class TeensComponent extends ScrollToElement implements OnInit {
       setTimeout(() => {
         if (qp.cc && qp.cc === 'deo') {
          this.scrollToElement()
+        } else {
+          this.scrollToPosition(0)
         }
       })
     });
