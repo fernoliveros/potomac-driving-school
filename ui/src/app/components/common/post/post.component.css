@@ -16,3 +16,14 @@
   flex-flow: column;
   justify-content: space-between;
 }
+
+.post-title {
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.post {
+  margin-top: 0;
+}
