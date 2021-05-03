@@ -34,7 +34,7 @@
   margin-left: 15px;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 500px) {
   .icon-cont {
     font-size: 40px;
   }
