@@ -23,14 +23,13 @@
                 <mat-form-field style="min-width: 240px;">
                   <mat-label>Type of Instruction</mat-label>
                   <mat-select formControlName="class" name="className" id="selectClass" required>
-                    <mat-option value="btwt">License for Teens</mat-option>
+                    <mat-option value="btw">Behind The Wheel</mat-option>
+                    <mat-option value="dic">Driver Improvement Clinic</mat-option>
+                    <mat-option value="deo">Driver's Education - Online</mat-option>
+                    <mat-option value="dec">Driver's Education - Classroom</mat-option>
                     <mat-option value="btwa">License for Adults</mat-option>
                     <mat-option value="re">Re-Examination</mat-option>
                     <mat-option value="rc">Re-Certification</mat-option>
-                    <mat-option value="dic">Driver Improvement Clinic</mat-option>
-                    <mat-option value="btw">Behind The Wheel</mat-option>
-                    <mat-option value="dec">Driver's Education - Classroom</mat-option>
-                    <mat-option value="deo">Driver's Education - Online</mat-option>
                     <mat-option value="pdl">Private Drivig Lessons</mat-option>
                     <mat-option value="spt">Special Package for Teens</mat-option>
                     <mat-option value="spa">Special Package for Adults</mat-option>
@@ -49,14 +48,14 @@
                 </mat-form-field>
               </div>
             </div>
-            <div class="col-md-3">
+            <!-- <div class="col-md-3">
               <div class="form-group">
                 <mat-form-field>
                   <mat-label>Middle Name</mat-label>
                   <input matInput type="text" name="mname" formControlName="mname" />
                 </mat-form-field>
               </div>
-            </div>
+            </div> -->
             <div class="col-md-3">
               <div class="form-group">
                 <mat-form-field>
@@ -65,26 +64,7 @@
                 </mat-form-field>
               </div>
             </div>
-          </div>
-          <div class="row align-center">
-            <div class="col-md-3">
-              <div class="form-group">
-                <mat-form-field>
-                  <mat-label>Date of Birth</mat-label>
-                  <input matInput type="date" name="dob" formControlName="dob" required />
-                </mat-form-field>
-              </div>
-            </div>
-            <div class="col-md-5">
-              <div class="form-group sexRadio">
-                <mat-radio-group aria-label="Select an option" formControlName="sex">
-                  <mat-radio-button value="male">Male</mat-radio-button>
-                  <mat-radio-button value="female">Female</mat-radio-button>
-                  <mat-radio-button value="nonBinary">Non-Binary</mat-radio-button>
-                </mat-radio-group>
-              </div>
-            </div>
-          </div>
+          </div>          
           <div class="row">
             <div class="col-md-3">
               <div class="form-group">
@@ -102,7 +82,26 @@
                 </mat-form-field>
               </div>
             </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <mat-form-field>
+                  <mat-label>Date of Birth</mat-label>
+                  <input matInput type="date" name="dob" formControlName="dob" required />
+                </mat-form-field>
+              </div>
+            </div>
           </div>
+          <!-- <div class="row align-center">
+            <div class="col-md-5">
+              <div class="form-group sexRadio">
+                <mat-radio-group aria-label="Select an option" formControlName="sex">
+                  <mat-radio-button value="male">Male</mat-radio-button>
+                  <mat-radio-button value="female">Female</mat-radio-button>
+                  <mat-radio-button value="nonBinary">Non-Binary</mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
+          </div> -->
           <div class="row">
             <div class="col-md-3">
               <div class="form-group">

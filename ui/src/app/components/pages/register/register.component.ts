@@ -23,14 +23,13 @@ export class RegisterComponent extends EmailForm implements OnInit {
   protected emailFailTitle = 'There was an error submitting your registration'
 
   classNameMap: Map<string, string> = new Map([
-    ["btwt", "License for Teens"],
+    ["btw", "Behind The Wheel"],
+    ["dic", "Driver Improvement Clinic"],
+    ["deo", "Driver's Education - Online"],
+    ["dec", "Driver's Education - Classroom"],
     ["btwa", "License for Adults"],
     ["re", "Re-Examination"],
     ["rc", "Re-Certification"],
-    ["dic", "Driver Improvement Clinic"],
-    ["btw", "Behind The Wheel"],
-    ["dec", "Driver's Education - Classroom"],
-    ["deo", "Driver's Education - Online"],
     ["pdl", "Private Drivig Lessons"],
     ["spt", "Special Package for Teens"],
     ["spa", "Special Package for Adults"]
@@ -56,10 +55,10 @@ export class RegisterComponent extends EmailForm implements OnInit {
     this.emailForm = this.registrationForm = this.fb.group({
       class: ['', Validators.required],
       fname: ['', Validators.required],
-      mname: [''],
+      // mname: [''],
       lname: ['', Validators.required],
       dob: ['', Validators.required],
-      sex: [''],
+      // sex: [''],
       phone: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       address: ['', Validators.required],
@@ -112,7 +111,7 @@ export class RegisterComponent extends EmailForm implements OnInit {
         `Address: ${address} ${city}, ${state} ${zip}`,
         `Phone: ${phone}`,
         // fields above are required, below are optional so check
-        `Sex: ${sex ? sex : 'N/A'}`,
+        // `Sex: ${sex ? sex : 'N/A'}`,
         `Email: ${email ? email : 'N/A'}`,
         `Preferred Start: ${preferredStart ? preferredStart : 'N/A'}`,
         `Comments: ${comments ? comments : 'N/A'}`
@@ -135,7 +134,7 @@ export class RegisterComponent extends EmailForm implements OnInit {
   }
 
   private studentFullName(): string {
-    return `${this.getFormVal('fname')} ${this.getFormVal('mname')} ${this.getFormVal('lname')}`
+    return `${this.getFormVal('fname')} ${this.getFormVal('lname')}`
   }
 
   private getPreferredStartDate() {
