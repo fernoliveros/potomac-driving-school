@@ -6,8 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.css'],
 })
 export class AboutComponent implements OnInit {
-  public readonly yearsOfExperience = new Date().getFullYear() - 2007;
+  private startYear = 2007
+  public readonly yearsOfExperience = new Date().getFullYear() - this.startYear;
+  public readonly licencesIssued = this.yearsOfExperience * 12 * 60
+  
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.licencesIssued)
+  }
 }
