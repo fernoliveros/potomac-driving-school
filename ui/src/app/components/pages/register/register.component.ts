@@ -93,7 +93,6 @@ export class RegisterComponent extends EmailForm implements OnInit {
   private buildEmailString() {
     const possibleClassName = this.classNameMap.get(this.getFormVal('class')),
       className = possibleClassName ? possibleClassName : 'Error getting class name',
-      sex = this.getFormVal('sex'),
       phone = this.getFormVal('phone'),
       email = this.getFormVal('email'),
       address = this.getFormVal('address'),

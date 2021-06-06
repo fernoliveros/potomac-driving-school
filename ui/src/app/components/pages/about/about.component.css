@@ -68,3 +68,7 @@
     gap: 50px;
   }
 }
+
+.about-page-container {
+  min-height: calc(100% - 175px) ;
+}
