@@ -21,7 +21,7 @@
 <section class="section-padding recent-posts">
   <div class="container">
     <div class="row">
-      <div class="col-lg-4 col-md-6">
+      <div class="col-lg-3 col-md-6">
         <app-post
           [imgPath]="'assets/images/behind_the_wheel.jpg'"
           [title]="'Behind The Wheel'"
@@ -30,7 +30,7 @@
           (readMore)="onReadMore('btw')"
         ></app-post>
       </div>
-      <div class="col-lg-4 col-md-6">
+      <div class="col-lg-3 col-md-6">
         <app-post
           [imgPath]="'assets/images/drivers_ed.jpg'"
           [title]="'Driver\'s Education'"
@@ -39,11 +39,21 @@
           (readMore)="onReadMore('deo')"
         ></app-post>
       </div>
-      <div class="col-lg-4 col-md-6">
+      <div class="col-lg-3 col-md-6">
+        <app-post
+          [imgPath]="'assets/images/va_driver_manual.jpg'"
+          [title]="'Re-Examination'"
+          [description]="RexDescription"
+          [showReadmore]="false"
+          (register)="onRegister('re')"
+          (readMore)="onReadMore('re')"
+        ></app-post>
+      </div>
+      <div class="col-lg-3 col-md-6">
         <app-post
           [imgPath]="'assets/images/improvement_clinic.jpg'"
           [title]="'Driving Improvement Clinic'"
-          [description]="DriversEdDescription"
+          [description]="DicDescription"
           (register)="onRegister('dic')"
           (readMore)="onReadMore('dic')"
         ></app-post>

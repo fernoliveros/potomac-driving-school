@@ -9,6 +9,7 @@ export class PostComponent implements OnInit {
   @Input() imgPath: string;
   @Input() title: string;
   @Input() description: string;
+  @Input() showReadmore = true;
   @Output() register = new EventEmitter();
   @Output() readMore = new EventEmitter();
 

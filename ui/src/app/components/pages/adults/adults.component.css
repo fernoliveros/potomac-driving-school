@@ -35,3 +35,7 @@ p {
 app-card {
   width: 100%;
 }
+.post-proceds {
+  text-align: left;
+font-size: 14px;
+}

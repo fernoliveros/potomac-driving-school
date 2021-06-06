@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="bottom">
-      <a class="readmore pointer" (click)="onReadMore()"
+      <a class="readmore pointer" (click)="onReadMore()" [hidden]="!showReadmore"
         >Read More <i class="icofont-long-arrow-right"></i
       ></a>
       <a class="register pointer" (click)="onRegister()">Register</a>

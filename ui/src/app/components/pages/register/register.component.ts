@@ -24,15 +24,12 @@ export class RegisterComponent extends EmailForm implements OnInit {
 
   classNameMap: Map<string, string> = new Map([
     ["btw", "Behind The Wheel"],
-    ["dic", "Driver Improvement Clinic"],
     ["deo", "Driver's Education - Online"],
     ["dec", "Driver's Education - Classroom"],
-    ["btwa", "License for Adults"],
+    ["dic", "Driver Improvement Clinic"],
     ["re", "Re-Examination"],
-    ["rc", "Re-Certification"],
-    ["pdl", "Private Drivig Lessons"],
-    ["spt", "Special Package for Teens"],
-    ["spa", "Special Package for Adults"]
+    ["pdl", "Private Driving Lessons"],
+    ["spt", "Package Deal (Private Lessons + BTW)"]
   ])
 
   public states = [
