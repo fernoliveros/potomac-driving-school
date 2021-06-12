@@ -17,26 +17,26 @@
     <div class="row">
       <app-card (register)="onRegister('btw')" title="Behind The Wheel">
         <p>
-          Adults (18 and older) can take Behind The Wheel in order to obtain their driver’s license.
+          Adults (18 and older) can take Behind the Wheel in order to obtain their driver’s license.
           This course consists of 7 sessions in the car in which the student will be driving and observing. At the end
           of the course the student will then take a road skills test. Once completed, the student will receive a
           "Completion Certificate - Adult Waiver" which can then be presented to the DMV to receive
           their driver's license. The student no longer will need to take the DMV road test or wait the holding period
-          for the
-          Learner's Permit.
+          for the Learner's Permit.
         </p>
         <div class="flex-left">
           <ul class="list">
             <span>Requirements:</span>
             <li>Driving Learner's Permit</li>
             <li>
-              Driver's Education Certificate. This can obtained from the high school's office. If you took it with other
-              DMV Licensed school they will issue it. Otherwise you can take the class online with us.
+              Driver's Education Certificate. If this class was taken in high school, you can obtain the certificate
+              from that high school's office. We also offer Driver's Education online for those who have not taken it,
+              such as homeschooled students and students from out of state.
             </li>
           </ul>
         </div>
       </app-card>
-      <app-card (register)="onRegister('deo')" title="Driver's Education">
+      <app-card id="deoCard" (register)="onRegister('deo')" title="Driver's Education">
         <p>
           This course is required by the DMV to obtain your license for students who have not taken the Driver’s
           Education class in high school, such as home schooled students and students coming from out of state.
@@ -66,7 +66,7 @@
           </ol>
         </div>
         <div>
-          <p>For more information or rupport contact us:</p>
+          <p>For more information or support contact us:</p>
           <img class="img-fluid" src="/assets/images/National_Driver_Training_Institute.png" />
           <div style="font-size:16px;">
             <div>Tel: 1-800-942-2050</div>
@@ -82,7 +82,7 @@
               passport or
               military identification).</li>
             <li>
-              Proof of completion of the on line driver education course.
+              Proof of completion of the online driver education course.
             </li>
             <li>
               The online driver training school will provide a computer for testing.
@@ -98,8 +98,8 @@
         </p>
         <strong>Failed 3 times DMV Road Test:</strong>
         <p>
-          If you have failed the DMV road test 3 times this course is required by the DMV. This course consists
-          7 fifty-minute classes in our student instruction vehicle.  When completed, we will use a certificate that allows the
+          If you have failed the DMV road test 3 times this course is required by the DMV. This course consists of
+          7 fifty-minute classes in our student instruction vehicle. When completed, we will use a certificate that allows the
           student to take the road test at the DMV again.
         </p>
       </app-card>
@@ -112,11 +112,10 @@
           driver's license.
         </p>
       </app-card>
-      <app-card (register)="onRegister('dic')" title="Driving Improvement Clinic">
+      <app-card id="dicCard" (register)="onRegister('dic')" title="Driving Improvement Clinic">
         <p>This course is either for people who have been mandated to take it (by the DMV or court) or for people who
           need to gain points on their driving record. It is designed to make you aware of rules and regulations of
-          the road
-          and become a safer driver. </p>
+          the road and become a safer driver. </p>
         <p>
           Taking this course voluntarily will add 5 points to your driving record. We recommend you take this course
           voluntarily if you are facing a traffic violation in court. If you are 21 or younger you must attend this

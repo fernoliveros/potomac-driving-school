@@ -365,10 +365,17 @@ input[type=number] {
 .pointer {
 	cursor: pointer;
 }
+
+#navbarNavDropdown ul {
+	align-items: flex-end;
+}
+
 .navbar-1 .pds-name {
 	color: white;
 }
 
-.fixed-top .pds-name {
-	color: black;
+@media only screen and (max-width: 990px) {
+  .navbar-1 .pds-name {
+		color: black;
+	}
 }

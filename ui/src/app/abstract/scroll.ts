@@ -13,6 +13,7 @@ export abstract class ScrollToElement {
         const element: HTMLElement = this.el.nativeElement.querySelector(
             `#${this.elementToScrollId}`
         );
+        console.log(this.el.nativeElement)
 
         window.scroll({
             top: this.getTopOffset(element),

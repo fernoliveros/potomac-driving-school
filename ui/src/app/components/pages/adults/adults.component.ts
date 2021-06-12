@@ -8,7 +8,7 @@ import { ScrollToElement } from 'src/app/abstract/scroll';
   styleUrls: ['./adults.component.css'],
 })
 export class AdultsComponent extends ScrollToElement implements OnInit {
-  public elementToScrollId = 'dicCard'
+  public elementToScrollId = 'deoCard'
 
   constructor(
     private router: Router,
@@ -20,8 +20,15 @@ export class AdultsComponent extends ScrollToElement implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe((qp: { cc: string }) => {
       setTimeout(() => {
-        if (qp.cc && qp.cc === 'dic') {
-         this.scrollToElement()
+        if (qp.cc) {
+          if (qp.cc === 'deo') {
+            this.scrollToElement()
+          } else if (qp.cc === 'dic') {
+            this.elementToScrollId = 'dicCard'
+            this.scrollToElement()
+          } else {
+            this.scrollToPosition(0)
+          }
         }
       })
     });

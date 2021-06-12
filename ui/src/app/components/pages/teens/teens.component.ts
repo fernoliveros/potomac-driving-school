@@ -15,16 +15,21 @@ export class TeensComponent extends ScrollToElement implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     protected el: ElementRef) {
-      super(el)
-     }
+    super(el)
+  }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((qp: { cc: string }) => {
       setTimeout(() => {
-        if (qp.cc && qp.cc === 'deo') {
-         this.scrollToElement()
-        } else {
-          this.scrollToPosition(0)
+        if (qp.cc) {
+          if (qp.cc === 'deo') {
+            this.scrollToElement()
+          } else if (qp.cc === 'dic') {
+            this.elementToScrollId = 'dicCard'
+            this.scrollToElement()
+          } else {
+            this.scrollToPosition(0)
+          }
         }
       })
     });

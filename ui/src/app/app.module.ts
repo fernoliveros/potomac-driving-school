@@ -27,8 +27,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AlertModal } from './components/common/alert.modal/alert.modal.component';
+import { AdultModal } from './components/common/adult.modal/adult.modal';
 import { InvalidControlScrollDirective } from './directives/invalid.scroll.directive';
 import { NgxCaptchaModule } from 'ngx-captcha';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,7 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     CardComponent,
     PhoneNumberDirective,
     AlertModal,
+    AdultModal,
     InvalidControlScrollDirective
   ],
   imports: [
@@ -63,7 +66,8 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     MatDatepickerModule,
     MatNativeDateModule,
     MatDialogModule,
-    NgxCaptchaModule
+    NgxCaptchaModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],
