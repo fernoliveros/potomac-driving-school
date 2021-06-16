@@ -31,6 +31,7 @@ import { AdultModal } from './components/common/adult.modal/adult.modal';
 import { InvalidControlScrollDirective } from './directives/invalid.scroll.directive';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatNativeDateModule,
     MatDialogModule,
     NgxCaptchaModule,
-    MatButtonModule
+    MatButtonModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

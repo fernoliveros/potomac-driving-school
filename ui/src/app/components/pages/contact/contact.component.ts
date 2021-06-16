@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, FormGroupDirective, Validators } from '@angular
 import { MatDialog } from '@angular/material/dialog';
 import { EmailForm } from 'src/app/abstract/email.form';
 import { ApiGatewayService } from 'src/app/service/api.gateway.service';
+import { LoadingService } from 'src/app/service/loading.service';
 import { AlertModal, AlertModalInputs } from '../../common/alert.modal/alert.modal.component';
 
 @Component({
@@ -21,9 +22,10 @@ export class ContactComponent extends EmailForm implements OnInit {
   constructor(
     protected apiGateway: ApiGatewayService,
     private fb: FormBuilder,
-    protected dialog: MatDialog
+    protected dialog: MatDialog,
+    protected loadingService: LoadingService
   ) {
-    super(apiGateway, dialog)
+    super(apiGateway, dialog, loadingService)
    }
 
   ngOnInit(): void {

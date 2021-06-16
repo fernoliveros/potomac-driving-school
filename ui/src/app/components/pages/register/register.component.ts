@@ -5,6 +5,7 @@ import { ApiGatewayService } from 'src/app/service/api.gateway.service';
 import * as moment from "moment";
 import { MatDialog } from '@angular/material/dialog';
 import { EmailForm } from 'src/app/abstract/email.form';
+import { LoadingService } from 'src/app/service/loading.service';
 
 @Component({
   selector: 'app-register',
@@ -41,9 +42,10 @@ export class RegisterComponent extends EmailForm implements OnInit {
     private route: ActivatedRoute,
     protected apiGateway: ApiGatewayService,
     private fb: FormBuilder,
-    protected dialog: MatDialog
+    protected dialog: MatDialog,
+    protected loadingService: LoadingService
   ) {
-    super(apiGateway, dialog)
+    super(apiGateway, dialog, loadingService)
     this.tomorrow.setDate(this.tomorrow.getDate() + 1);
     this.tomorrow = this.tomorrow.toISOString().split("T")[0];
   }

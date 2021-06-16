@@ -3,6 +3,7 @@ import { MatDialog } from "@angular/material/dialog";
 import { environment } from "src/environments/environment";
 import { AlertModal, AlertModalInputs } from "../components/common/alert.modal/alert.modal.component";
 import { ApiGatewayService } from "../service/api.gateway.service";
+import { LoadingService } from "../service/loading.service";
 
 export abstract class EmailForm {
 	protected abstract emailForm: FormGroup
@@ -12,16 +13,20 @@ export abstract class EmailForm {
 
 	constructor(
 		protected apiGateway: ApiGatewayService,
-		protected dialog: MatDialog
+		protected dialog: MatDialog,
+		protected loadingService: LoadingService
 	) { }
 
 	protected submitEmailForm(payload: PdsEmailPayload): void {
 		if (this.emailForm.valid) {
-			const path = `/default/pdsemaillambda`
+			const path = `/default/pdsemaillambda`;
+      this.loadingService.startLoading();
 			this.apiGateway.doPost(path, payload).then(resp => {
 				if (resp.statusCode === 200) {
+					this.loadingService.endLoading();
 					this.handleEmailSuccess()
 				} else {
+					this.loadingService.endLoading();
 					this.handleEmailFailure()
 				}
 			})
