@@ -87,6 +87,9 @@ export class RegisterComponent extends EmailForm implements OnInit {
       studentEmailBody: this.buildStudentEmailString(),
       registrationForm: formWthoutCaptcha
     })
+    if (this.emailForm.valid) {
+      this.saveStudent()
+    }
   }
 
   private buildEmailString() {
@@ -151,4 +154,14 @@ export class RegisterComponent extends EmailForm implements OnInit {
   protected handleEmailSuccess(): void {
     this.emailSuccess = true;
   }
+
+  private saveStudent(): void {
+    const path = `/default/pdsinsert`;
+    const payload = this.emailForm.value
+    console.log('ABOUT TO POST STUDENT:', payload)
+    this.apiGateway.doPost(path, payload).then(resp => {
+      console.log(resp)
+    })
+  }
+    
 }
