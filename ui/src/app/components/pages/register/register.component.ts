@@ -158,9 +158,12 @@ export class RegisterComponent extends EmailForm implements OnInit {
   private saveStudent(): void {
     const path = `/default/pdsinsert`;
     const payload = this.emailForm.value
-    console.log('ABOUT TO POST STUDENT:', payload)
     this.apiGateway.doPost(path, payload).then(resp => {
-      console.log(resp)
+      if (resp.statusCode === 200) {
+        console.log('student saved')
+      } else {
+        console.error('error saving student')
+      }
     })
   }
     
