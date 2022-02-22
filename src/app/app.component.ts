@@ -8,5 +8,7 @@ import { LoadingService } from './service/loading.service';
 })
 export class AppComponent {
   title = 'pds';
-  constructor(public loadingService: LoadingService) {}
+  constructor(public loadingService: LoadingService) {
+    //yes
+  }
 }
