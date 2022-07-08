@@ -28,7 +28,7 @@
     "colors": "^1.4.0",
     "dotenv": "^8.2.0",
     "jquery": "^3.5.1",
-    "moment": "^2.29.1",
+    "moment": "^2.29.4",
     "ngx-captcha": "^9.0.1",
     "owl.carousel": "^2.3.4",
     "rxjs": "~6.5.4",
